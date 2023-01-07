@@ -22,6 +22,7 @@ if(isset($_POST['submit'])):
     // print_r($_POST['endereco']);
     $nome = $_POST['nome'];
     $usuario =  $_POST['usuario'];
+    $senha = $_POST['senha'];
     $email = $_POST['email'];
     $telefone = $_POST['telefone'];
     $sexo = $_POST['genero'];
@@ -30,7 +31,9 @@ if(isset($_POST['submit'])):
     $estado = $_POST['estado'];
     $endereco = $_POST['endereco'];
 
-    $resultado = mysqli_query($conexao, "INSERT INTO usuarios(nome,usuario,email,telefone,sexo,data_nasc,cidade,estado,endereco) VALUES ('$nome', '$usuario', '$email', '$telefone', '$sexo', '$data_nasc', '$cidade', '$estado', '$endereco')");
+    $resultado = mysqli_query($conexao, "INSERT INTO usuarios(nome,usuario,senha,email,telefone,sexo,data_nasc,cidade,estado,endereco) VALUES ('$nome', '$usuario', '$senha','$email', '$telefone', '$sexo', '$data_nasc', '$cidade', '$estado', '$endereco')");
+
+    header('Location: login.php');
 endif;
 
 
@@ -59,6 +62,11 @@ endif;
                 <div class="inputBox">
                     <input type="text" name="usuario" id="usuario" class="inputUser" required>
                     <label for="usuario" class="labelInput">Usuário</label>
+                </div><br><br>
+
+                <div class="inputBox">
+                    <input type="text" name="senha" id="senha" class="inputUser" required>
+                    <label for="senha" class="labelInput">Senha</label>
                 </div><br><br>
 
                 <div class="inputBox">
