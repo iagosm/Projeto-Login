@@ -66,6 +66,19 @@ legend{
     font-size: 15px;
 }
 
+#update{
+    width: 100%;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #3B0F94;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #D9D9D9;
+    transition: 2s;
+}
+
 #submit{
     width: 100%;
     padding: 15px;
