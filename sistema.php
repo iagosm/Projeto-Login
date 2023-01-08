@@ -11,8 +11,16 @@ if((!isset($_SESSION['usuario']) == true) and (!isset($_SESSION['senha']) == tru
 }
 //caso exista, ele volta 
 $logado = $_SESSION['usuario'];
-//listagem
+//verificação da busca
+if(!empty($_GET['search'])){
+  $data = $_GET['search'];
+  $sql = "SELECT * FROM usuarios WHERE id='%$data%' or nome LIKE '%$data%' or usuario LIKE '%$data%' or email LIKE '%$data%'";
+}
+else{
+  //listagem
 $sql = "SELECT * FROM usuarios ORDER BY id DESC";
+}
+
 $result = mysqli_query($conexao, $sql);
 
 
